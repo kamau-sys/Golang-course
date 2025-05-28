@@ -5,6 +5,9 @@ import (
 )
 
 func main() {
+
+	 // PART 1: BASIC ARRAYS (1D)
+	 
 	fmt.Println("==complete go arrays tutorial==")
 	fmt.Println("from basic arrays (1D) to 2D arrays")
 
@@ -65,4 +68,68 @@ func main() {
 
 	   // 1.5 ARRAY OPERATIONS
 	   fmt.Println("common array operations")
+	   
+	   scores := [5] int {10,22,80,75,90}
+
+	   //find highest score
+	   max := scores[0]
+	   for _,value := range scores{
+		if value > max {
+			max = value
+
+		}
+		
+
+	   }
+	   fmt.Println("max score: ", max)
+
+	   //calculate average
+
+	   sum := 0
+	   for _,score := range scores {
+		sum = sum + score
+	   }
+
+	   fmt.Println("Average is: ", float64(sum) / float64(len(scores)))
+
+	   //search for a value
+	   searchFor := 92
+	   found := false
+	   
+	   for index,score := range scores{
+		if score == searchFor {
+			found = true
+			fmt.Println("found ", score, "at index", index)
+			break
+		}
+	   }
+	   if !found{
+		fmt.Println("could not find", searchFor)
+	   }
+
+
+	      // 1.6 COMPARING ARRAYS
+
+		  arr1 := [3] int {3,6,8}
+		  arr2 := [3] int {3,6,8}
+		  arr3 := [3] int {3,7,8}
+		  fmt.Println("arr1 == arr2 ?", arr1 == arr2)
+		  fmt.Println("arr1 == arr3 ?", arr1 == arr3)
+
+
+		     // PART 2: ARRAYS VS SLICES (Important Concept)
+    //
+
+	fmt.Println("\n\n Part2: Arrays vs Slices")
+	//Arrays have a fixed size
+	fixedArray := [3] int {1,2,3}
+	fmt.Println("\nArray has a fixed size, length :", len(fixedArray))
+
+	//slices are dynamic
+	    dynamicSlice := []int{1, 2, 3}
+    fmt.Printf("Slice (dynamic): %v, length: %d\n", dynamicSlice, len(dynamicSlice))
+
+
+
+
 }
